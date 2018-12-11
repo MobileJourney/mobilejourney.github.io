@@ -1,13 +1,22 @@
-/*var map = new BMap.Map("container");
-var point = new BMap.Point(116.404, 39.915);
-map.centerAndZoom(point, 15);
-window.setTimeout(function () {
-    map.panTo(new BMap.Point(116.409, 39.918));
-}, 2000);*/
-
 function initialize() {
     var mp = new BMap.Map("container");
+    var point = new BMap.Point(121.491, 31.233);
+    var points = [
+        new BMap.Point(121.491, 31.233),
+        new BMap.Point(121.481, 31.233),
+        new BMap.Point(121.501, 31.233),
+        new BMap.Point(121.491, 31.243) 
+    ];
+    for (let i = 0; i < points.length; i++) {
+        var marker = new BMap.Marker(points[i]);
+        mp.addOverlay(marker);
+        marker.addEventListener("click", route);
+    }
+    function route(){
+        alert("works")
+    };
     mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+    mp.enableScrollWheelZoom();
 }
 
 function loadScript() {
