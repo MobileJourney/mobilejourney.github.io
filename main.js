@@ -18,22 +18,6 @@ function loadScript() {
 
 window.onload = loadScript;
 
-//personal code
 
-var banner = document.getElementById("banner");
-var container = document.getElementById("container");
-var button = document.getElementsByClassName("pano_close")[0];
-
-//button.style.display = "block";
-
-banner.onclick = function(){
-    container.style.display = "block";
-    banner.style.display = "none"
-}
-
-/*button.onclick = function(){
-    container.style.display = "none";
-    banner.style.display = "block"
-}*/
 
 
