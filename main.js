@@ -12,7 +12,7 @@ function initialize() {
 
 function loadScript() {
     var script = document.createElement("script");
-    script.src = "http://api.map.baidu.com/api?v=2.0&ak=S3EPllWD7Z9ZfxknQ8QImWSopvsMUjMz&callback=initialize";
+    script.src = "https://api.map.baidu.com/api?v=2.0&ak=S3EPllWD7Z9ZfxknQ8QImWSopvsMUjMz&callback=initialize";
     document.body.appendChild(script);
 }
 
