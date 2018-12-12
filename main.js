@@ -1,6 +1,15 @@
 function initialize() {
     var mp = new BMap.Map("container");
     //var point = new BMap.Point(121.491, 31.233);
+    var navigationControl = new BMap.NavigationControl({
+        // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+    });
+    mp.addControl(navigationControl);
     var points = [
         new BMap.Point(-2.349/*766*/, 53.465/*317*/) 
     ];
@@ -22,7 +31,7 @@ function loadScript() {
     document.body.appendChild(script);
 }
 
-window.onload = loadScript;
+window.onload = loadScript; 
 
 
 
