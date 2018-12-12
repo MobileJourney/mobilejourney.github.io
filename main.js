@@ -2,7 +2,10 @@ function initialize() {
     var mp = new BMap.Map("container");
     var point = new BMap.Point(121.491, 31.233);
     var points = [
-        new BMap.Point(-2.349766, 53.465317) 
+        new BMap.Point(53.465/*317*/, -2.349/*766*/) 
+    ];
+    var googlePoints = [
+        
     ];
     for (let i = 0; i < points.length; i++) {
         var marker = new BMap.Marker(points[i]);
@@ -12,7 +15,7 @@ function initialize() {
     function route(){
         alert("works")
     };
-    mp.centerAndZoom(new BMap.Point(31.233, 121.491), 11);
+    mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
     mp.enableScrollWheelZoom();
 }
 
