@@ -2,7 +2,7 @@ function initialize() {
     var mp = new BMap.Map("container");
     var point = new BMap.Point(121.491, 31.233);
     var points = [
-        new BMap.Point(53.465317, -2.349766) 
+        new BMap.Point(-2.349766, 53.465317) 
     ];
     for (let i = 0; i < points.length; i++) {
         var marker = new BMap.Marker(points[i]);
