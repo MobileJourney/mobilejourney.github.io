@@ -12,7 +12,7 @@ function initialize() {
     function route(){
         alert("works")
     };
-    mp.centerAndZoom(new BMap.Point(31.233, 121.491), 11);
+    mp.centerAndZoom(new BMap.Point(53.465, -2.349), 11);
     mp.enableScrollWheelZoom();
 }
 
