@@ -1,6 +1,6 @@
 function initialize() {
     var mp = new BMap.Map("container");
-    var point = new BMap.Point(121.491, 31.233);
+    //var point = new BMap.Point(121.491, 31.233);
     var points = [
         new BMap.Point(53.465/*317*/, -2.349/*766*/) 
     ];
