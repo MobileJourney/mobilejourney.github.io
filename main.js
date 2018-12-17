@@ -1,10 +1,10 @@
 function initialize() {
-    var mp = new BMap.Map("container");
+    var map = new BMap.Map("container");
     var navigationControl = new BMap.NavigationControl({
         anchor: BMAP_ANCHOR_TOP_LEFT,
         type: BMAP_NAVIGATION_CONTROL_ZOOM
     });
-    mp.addControl(navigationControl);
+    map.addControl(navigationControl);
     function myPos(position) {
         console.log(position.coords.latitude, position.coords.longitude);
         var points = [
@@ -20,13 +20,13 @@ function initialize() {
     }
     navigator.geolocation.getCurrentPosition(myPos);
    
-    mp.centerAndZoom(new BMap.Point(-2.349/*766*/, 53.465/*317*/), 11);
-    mp.enableScrollWheelZoom();
+    map.centerAndZoom(new BMap.Point(-2.349/*766*/, 53.465/*317*/), 11);
+    map.enableScrollWheelZoom();
 }
 
 function loadScript() {
     var script = document.createElement("script");
-    script.src = "https://api.map.baidu.com/api?v=2.0&ak=S3EPllWD7Z9ZfxknQ8QImWSopvsMUjMz&callback=initialize";
+    script.src = "https://api.map.baidu.com/api?v=3.0&ak=S3EPllWD7Z9ZfxknQ8QImWSopvsMUjMz&callback=initialize";
     document.body.appendChild(script);
 }
 
