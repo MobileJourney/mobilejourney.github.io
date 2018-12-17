@@ -8,7 +8,7 @@ function initialize() {
     function myPos(position) {
         console.log(position.coords.latitude, position.coords.longitude);
         var points = [
-            new BMap.Point(-2.349/*766*/, 53.465/*317*/)
+            new BMap.Point(-2.349/*766*/, 53.465/*317*/).setAnimation(BMAP_ANIMATION_BOUNCE)
         ];
         points.push(new BMap.Point(position.coords.longitude.toFixed(3), position.coords.latitude.toFixed(3)));
         for (let i = 0; i < points.length; i++) {
