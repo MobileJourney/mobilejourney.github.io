@@ -16,8 +16,8 @@ function initialize() {
             map.addOverlay(marker);
             marker.addEventListener("click", route);
         }
-        //var driving = new BMap.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
-        //driving.search(points[0], points[1]);
+        var driving = new BMap.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
+        driving.search(points[0], points[1]);
     }
     navigator.geolocation.getCurrentPosition(myPos);
    
