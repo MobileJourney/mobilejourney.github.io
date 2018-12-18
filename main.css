@@ -18,8 +18,8 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    height: 41%;
+    width: 72%;
+    height: 32%;
     background-image: linear-gradient(to bottom, #404040 0%, #262626 100%);
     z-index: 1010;
     display: flex;
@@ -60,17 +60,18 @@ body{
     padding: 0;
     margin: 0;
     font-size: 0.9em;
-    color: #999999
+    color: #999999;
+    padding: 0 10%
 
 }
 .modal a{
     text-align: center;
     padding: 0 15%;
     color: #999999;
-    padding: 3% 3%;
+    padding: 4% 3%;
 }
 .class-button{
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 5%;
     color: white;
