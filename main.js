@@ -16,18 +16,20 @@ function initialize() {
             map.addOverlay(marker);
             marker.addEventListener("click", route);
         }
-        //var driving = new BMap.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
-        //driving.search(points[0], points[1]);
+        var driving = new BMap.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
+        driving.search(points[0], points[1]);
     }
     //navigator.geolocation.getCurrentPosition(myPos);
     myPos();
+    
+ 
    
     function route(){
         modal.classList.remove("closed");
         modalOverlay.classList.remove("closed");
     };
     
-    map.centerAndZoom(new BMap.Point(-2.349/*766*/, 53.465/*317*/), 11);
+    map.centerAndZoom(new BMap.Point(-2.349766, 53.465317), 11);
     map.enableScrollWheelZoom();
 }
 
