@@ -22,8 +22,8 @@ function initialize() {
     navigator.geolocation.getCurrentPosition(myPos);
    
     function route(){
-        modal.classList.toggle("closed");
-        modalOverlay.classList.toggle("closed");
+        modal.classList.remove("closed");
+        modalOverlay.classList.remove("closed");
     };
     
     map.centerAndZoom(new BMap.Point(-2.349/*766*/, 53.465/*317*/), 11);
@@ -45,6 +45,6 @@ var modal = document.querySelector("#modal"),
     openButton = document.querySelector("#open-button");
 
     closeButton.addEventListener("click", function(){
-        modal.classList.toggle("closed");
-        modalOverlay.classList.toggle("closed");
+        modal.classList.add("closed");
+        modalOverlay.classList.add("closed");
     });
