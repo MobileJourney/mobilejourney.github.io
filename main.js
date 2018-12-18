@@ -19,7 +19,8 @@ function initialize() {
         var driving = new BMap.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
         driving.search(points[0], points[1]);
     }
-    navigator.geolocation.getCurrentPosition(myPos);
+    //navigator.geolocation.getCurrentPosition(myPos);
+    myPos();
    
     function route(){
         modal.classList.remove("closed");
