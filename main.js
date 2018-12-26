@@ -19,8 +19,14 @@ function initialize() {
             marker.onclick = function (e) {
                 var link = document.getElementById("link-baidu");
                 var p = e.target;
-                link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=%E6%88%91%E7%9A%84%E4%BD%8D%E7%BD%AE&content=%E7%99%BE%E5%BA%A6%E5%A5%8E%E7%A7%91%E5%A4%A7%E5%8E%A6&autoOpen=true&l");
-                
+                if ((navigator.platform.indexOf("iPhone") != -1) ||
+                    (navigator.platform.indexOf("iPod") != -1) ||
+                    (navigator.platform.indexOf("iPad") != -1)) {
+                    link.setAttribute("href", "baidumap://map/marker?location=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=我的位置&content=百度奎科大厦&src=ios.baidu.openAPIdemo");
+                    link.innerHTML = "Open in iOS app"
+                }else if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+                    link.setAttribute("href", "bdapp://map/marker?location=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=Marker&content=makeamarker&traffic=on&src=andr.baidu.openAPIdemo")
+                } else {link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=%E6%88%91%E7%9A%84%E4%BD%8D%E7%BD%AE&content=%E7%99%BE%E5%BA%A6%E5%A5%8E%E7%A7%91%E5%A4%A7%E5%8E%A6&autoOpen=true&l");}
             } //http://api.map.baidu.com/marker?location=40.047669,116.313082&title=我的位置&content=百度奎科大厦&output=html&src=webapp.baidu.openAPIdemo
         }
     }
@@ -35,7 +41,6 @@ function initialize() {
     
     map.centerAndZoom(new BMap.Point(-2.349766, 53.465317), 8);
     
-    //map.setCenter(new BMap.Point(-2.549/*766*/, 52.665/*317*/));
     map.enableScrollWheelZoom();
     
     if(!navigator.geolocation){
