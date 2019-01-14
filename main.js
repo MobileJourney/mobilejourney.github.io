@@ -19,19 +19,23 @@ function initialize() {
 
     marker1.onclick = function(e){
         modalInfo.classList.remove("closed-info");
+        document.getElementById("close-btn").classList.remove("closed-info");
         document.getElementById("store-address-first").innerHTML = "The Trafford Centre";
         document.getElementById("store-address-second").innerHTML = "M17 8DA Stretford, Manchester";
         var link = document.getElementById("link-baidu");
         var p = e.target;
         link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=The Trafford Centre&content=M17 8DA Stretford, Manchester&autoOpen=true&l");
+        modalInfo.classList.add("opened");
     }
     marker2.onclick = function(e){
         modalInfo.classList.remove("closed-info");
+        document.getElementById("close-btn").classList.remove("closed-info");
         document.getElementById("store-address-first").innerHTML = "The Bullring Upper Mall East, Park St";
         document.getElementById("store-address-second").innerHTML = "B5 4BP Digbeth, Birmingham";
         var link = document.getElementById("link-baidu");
         var p = e.target;
         link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=The Bullring Upper Mall East, Park St&content=B5 4BP Digbeth, Birmingham&autoOpen=true&l");
+        modalInfo.classList.add("opened");
     }
 
    
@@ -46,11 +50,14 @@ function initialize() {
 
     document.querySelector(".modal-info__button").addEventListener("click", modalWindow);
 
-    /*function hideModalInfo(){
+    function hideModalInfo(){
         modalInfo.classList.add("closed-info");
-    }*/
+        document.getElementById("close-btn").classList.add("closed-info")
+    }
 
-    //map.addEventListener("click", hideModalInfo);
+    /*map.addEventListener("click", hideModalInfo);  */
+    document.getElementById("close-btn").addEventListener("click", hideModalInfo);
+
     
     map.centerAndZoom(new BMap.Point(-2.349766, 53.465317), 8);
     

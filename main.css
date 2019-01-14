@@ -105,18 +105,23 @@ body{
     position: fixed;
 }
 .modal-info__center{
-    padding: 5%
+    padding: 5%;
+    width: 70%
 }
 .modal-info__button{
     background-color: rgba(230,0,26,0.05);
-    width: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .go-to-map{
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px;
-    position: absolute;  /* подробнее про position: absolute; */
+    /*position: absolute;  /* подробнее про position: absolute; */
     text-align: center;
-    margin-top: 5em
+    margin: 0;
+    padding: 10%
 }
 .store-address{
     white-space: nowrap;
@@ -136,4 +141,12 @@ body{
 }
 .closed-info{
     display: none;
+}
+.close-btn{
+    position: fixed;
+    top: 60%;
+    left: 10%;
+    padding:2%;
+    font-family: 'Courier New', Courier, sans-serif;
+    cursor: pointer
 }
