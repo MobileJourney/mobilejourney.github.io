@@ -5,39 +5,52 @@ function initialize() {
         type: BMAP_NAVIGATION_CONTROL_ZOOM
     });
     map.addControl(navigationControl);
-    function myPos() {
-        var points = [
-            new BMap.Point(-2.349/*766*/, 53.465/*317*/),
-            new BMap.Point(-2.549/*766*/, 54.665/*317*/),
-            new BMap.Point(-2.549/*766*/, 52.665/*317*/)
-        ];
 
-        for (let i = 0; i < points.length; i++) {
-            var marker = new BMap.Marker(points[i]);
-            map.addOverlay(marker);
-            marker.addEventListener("click", modalWindow);
-            marker.onclick = function (e) {
-                var link = document.getElementById("link-baidu");
-                var p = e.target;
-                if ((navigator.platform.indexOf("iPhone") != -1) ||
-                    (navigator.platform.indexOf("iPod") != -1) ||
-                    (navigator.platform.indexOf("iPad") != -1)) {
-                    link.setAttribute("href", "baidumap://map/marker?location=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=我的位置&content=百度奎科大厦&src=ios.baidu.openAPIdemo");
-                    link.innerHTML = "Open in iOS app"
-                }else if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
-                    link.setAttribute("href", "bdapp://map/marker?location=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=Marker&content=makeamarker&traffic=on&src=andr.baidu.openAPIdemo")
-                } else {link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=%E6%88%91%E7%9A%84%E4%BD%8D%E7%BD%AE&content=%E7%99%BE%E5%BA%A6%E5%A5%8E%E7%A7%91%E5%A4%A7%E5%8E%A6&autoOpen=true&l");}
-            } //http://api.map.baidu.com/marker?location=40.047669,116.313082&title=我的位置&content=百度奎科大厦&output=html&src=webapp.baidu.openAPIdemo
-        }
-    }
-    myPos();
     
+    
+    var p1 = new BMap.Point(-2.349/*766*/, 53.465/*317*/);
+    var p2 = new BMap.Point(-1.892/*766*/, 52.477/*317*/);
+
+    var marker1 = new BMap.Marker(p1);
+    var marker2 = new BMap.Marker(p2);
+
+    map.addOverlay(marker1);
+    map.addOverlay(marker2);
+
+    marker1.onclick = function(e){
+        modalInfo.classList.remove("closed-info");
+        document.getElementById("store-address-first").innerHTML = "The Trafford Centre";
+        document.getElementById("store-address-second").innerHTML = "M17 8DA Stretford, Manchester";
+        var link = document.getElementById("link-baidu");
+        var p = e.target;
+        link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=The Trafford Centre&content=M17 8DA Stretford, Manchester&autoOpen=true&l");
+    }
+    marker2.onclick = function(e){
+        modalInfo.classList.remove("closed-info");
+        document.getElementById("store-address-first").innerHTML = "The Bullring Upper Mall East, Park St";
+        document.getElementById("store-address-second").innerHTML = "B5 4BP Digbeth, Birmingham";
+        var link = document.getElementById("link-baidu");
+        var p = e.target;
+        link.setAttribute("href", "http://map.baidu.com/?latlng=" + p.getPosition().lat + "," + p.getPosition().lng + "&title=The Bullring Upper Mall East, Park St&content=B5 4BP Digbeth, Birmingham&autoOpen=true&l");
+    }
 
    
     function modalWindow(){
         modal.classList.remove("closed");
         modalOverlay.classList.remove("closed");
     };
+
+    function modalWindowWithInfo(){
+        modalInfo.classList.remove("closed-info");
+    };
+
+    document.querySelector(".modal-info__button").addEventListener("click", modalWindow);
+
+    /*function hideModalInfo(){
+        modalInfo.classList.add("closed-info");
+    }*/
+
+    //map.addEventListener("click", hideModalInfo);
     
     map.centerAndZoom(new BMap.Point(-2.349766, 53.465317), 8);
     
@@ -75,7 +88,8 @@ window.onload = loadScript;
 var modal = document.querySelector("#modal"),
     modalOverlay = document.querySelector("#modal-overlay"),
     closeButton = document.querySelector("#close-button"),
-    openButton = document.querySelector("#open-button");
+    openButton = document.querySelector("#open-button"),
+    modalInfo = document.querySelector("#modal-info");
 
     closeButton.addEventListener("click", function(){
         modal.classList.add("closed");
