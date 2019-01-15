@@ -6,10 +6,13 @@ function initialize() {
     });
     map.addControl(navigationControl); */
 
-    map.addControl(new BMap.NavigationControl());
+    //map.addControl(new BMap.NavigationControl());
 
-    var opts = { offset: new BMap.Size(350, 150) }
-    map.addControl(new BMap.ScaleControl(opts));
+    var opts = { 
+        offset: new BMap.Size(30, 30),
+        type: BMAP_NAVIGATION_CONTROL_ZOOM
+    }
+    map.addControl(new BMap.NavigationControl(opts));
 
 
     /* var opts = { type: BMAP_NAVIGATION_CONTROL_LARGE }
