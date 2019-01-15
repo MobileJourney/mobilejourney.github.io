@@ -2,7 +2,7 @@ function initialize() {
     var map = new BMap.Map("container");
     var navigationControl = new BMap.NavigationControl({
         anchor: BMAP_ANCHOR_TOP_LEFT,
-        type: BMAP_NAVIGATION_CONTROL_ZOOM
+        type: BMAP_NAVIGATION_CONTROL_LARGE
     });
     map.addControl(navigationControl);
 
