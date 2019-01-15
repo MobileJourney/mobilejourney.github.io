@@ -6,12 +6,18 @@ function initialize() {
     });
     map.addControl(navigationControl); */
 
-    var opts = { type: BMAP_NAVIGATION_CONTROL_LARGE }
+    map.addControl(new BMap.NavigationControl());
+
+    var opts = { offset: new BMap.Size(150, 50) }
+    map.addControl(new BMap.ScaleControl(opts));
+
+
+    /* var opts = { type: BMAP_NAVIGATION_CONTROL_LARGE }
     map.addControl(new BMap.NavigationControl(opts));
 
-    /* function ZoomControl() {
+    function ZoomControl() {
         this.defaultAnchor = BMap_ANCHOR_TOP_LEFT;
-        this.defaultOffset = new BMap.Size(10, 10);
+        this.defaultOffset = new BMap.Size(150, 10);
     }
     ZoomControl.prototype = new.BMap.Control();
 
@@ -28,7 +34,7 @@ function initialize() {
         map.getContainer().appendChild(div);
         // 将DOM元素返回  
         return div; 
-    } */
+    }  */
     
     var p1 = new BMap.Point(-2.349/*766*/, 53.465/*317*/);
     var p2 = new BMap.Point(-1.892/*766*/, 52.477/*317*/);
