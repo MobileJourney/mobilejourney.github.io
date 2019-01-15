@@ -42,10 +42,10 @@ function initialize() {
     var p1 = new BMap.Point(-2.349/*766*/, 53.465/*317*/);
     var p2 = new BMap.Point(-1.892/*766*/, 52.477/*317*/);
 
-    var myIcon1 = new BMap.Icon("https://api.map.baidu.com/images/blank.gif", new BMap.Size(60, 60));
+    var myIcon1 = new BMap.Icon("https://image.flaticon.com/icons/svg/252/252025.svg", new BMap.Size(60, 60));
 
-    var marker1 = new BMap.Marker(p1, {icon: myIcon1});
-    var marker2 = new BMap.Marker(p2, {icon: myIcon1});
+    var marker1 = new BMap.Marker(p1, { icon: myIcon1 });
+    var marker2 = new BMap.Marker(p2, { icon: myIcon1 });
 
     map.addOverlay(marker1);
     map.addOverlay(marker2);
@@ -105,7 +105,7 @@ function initialize() {
         var longitude = position.coords.longitude;
         console.log(latitude, longitude);
         var myLocation = new BMap.Point(longitude, latitude);
-        var myIcon = new BMap.Icon("https://image.flaticon.com/icons/svg/149/149060.svg", new BMap.Size(30, 30));
+        var myIcon = new BMap.Icon("https://image.flaticon.com/icons/svg/149/149060.svg", new BMap.Size(60, 60));
         var myMarker = new BMap.Marker(myLocation,{icon: myIcon});
         //myMarker.setAnimation(BMAP_ANIMATION_BOUNCE)
 
