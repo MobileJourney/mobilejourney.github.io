@@ -1,12 +1,34 @@
 function initialize() {
     var map = new BMap.Map("container");
-    var navigationControl = new BMap.NavigationControl({
+    /* var navigationControl = new BMap.NavigationControl({
         anchor: BMAP_ANCHOR_TOP_LEFT,
         type: BMAP_NAVIGATION_CONTROL_LARGE
     });
-    map.addControl(navigationControl);
+    map.addControl(navigationControl); */
 
-    
+    var opts = { type: BMAP_NAVIGATION_CONTROL_LARGE }
+    map.addControl(new BMap.NavigationControl(opts));
+
+    /* function ZoomControl() {
+        this.defaultAnchor = BMap_ANCHOR_TOP_LEFT;
+        this.defaultOffset = new BMap.Size(10, 10);
+    }
+    ZoomControl.prototype = new.BMap.Control();
+
+    ZoomControl.prototype.initialize = function (map) {
+        var div = document.createElement("div");
+        div.appendChild(document.createTextNode("Zooom"));
+        div.style.cursor = "pointer";
+        div.style.border = "1px solid gray";
+        div.style.backgroundColor = "white";
+        // 绑定事件，点击一次放大两级    
+        div.onclick = function (e) {
+            map.zoomTo(map.getZoom() + 2);
+        }    
+        map.getContainer().appendChild(div);
+        // 将DOM元素返回  
+        return div; 
+    } */
     
     var p1 = new BMap.Point(-2.349/*766*/, 53.465/*317*/);
     var p2 = new BMap.Point(-1.892/*766*/, 52.477/*317*/);
