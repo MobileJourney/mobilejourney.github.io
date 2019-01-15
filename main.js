@@ -8,7 +8,7 @@ function initialize() {
 
     map.addControl(new BMap.NavigationControl());
 
-    var opts = { offset: new BMap.Size(150, 50) }
+    var opts = { offset: new BMap.Size(350, 150) }
     map.addControl(new BMap.ScaleControl(opts));
 
 
@@ -100,8 +100,9 @@ function initialize() {
         var longitude = position.coords.longitude;
         console.log(latitude, longitude);
         var myLocation = new BMap.Point(longitude, latitude);
-        var myMarker = new BMap.Marker(myLocation);
-        myMarker.setAnimation(BMAP_ANIMATION_BOUNCE)
+        var myIcon = new BMap.Icon("https://image.flaticon.com/icons/svg/149/149060.svg", new BMap.Size(30, 30));
+        var myMarker = new BMap.Marker(myLocation,{icon: myIcon});
+        //myMarker.setAnimation(BMAP_ANIMATION_BOUNCE)
 
         map.addOverlay(myMarker)
     }
@@ -110,6 +111,8 @@ function initialize() {
     }
     navigator.geolocation.getCurrentPosition(succes, error);
 }
+
+//document.querySelector(".BMap_mask").setAttribute("allowfullscreen", "");
 
 function loadScript() {
     var script = document.createElement("script");
