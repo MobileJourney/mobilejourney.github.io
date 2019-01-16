@@ -19,7 +19,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    height: 34%;
+    height: 36%;
     background-image: linear-gradient(to bottom, #404040 0%, #262626 100%);
     z-index: 1010;
     display: flex;
