@@ -86,11 +86,11 @@ body{
 .modal-with-info{
     position: fixed;
     width: 80%;
-    /*height: 35%;*/
+    height: 17%;
     background-color: white;
     opacity: 0.95;
     margin: 0 auto;
-    top: 60%;
+    top: 75%;
     left: 10%;
     border: 1px solid #00000021;
     display: flex;
@@ -117,7 +117,7 @@ body{
 }
 .go-to-map{
     font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
+    font-size: 25px;
     /*position: absolute;  /* подробнее про position: absolute; */
     text-align: center;
     margin: 0;
@@ -126,7 +126,7 @@ body{
 .store-address{
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 12px;
+    font-size: 26px;
     opacity: 0.5;
     margin-bottom: 0
 }
@@ -136,7 +136,7 @@ body{
 .store-name a{
     font-family: 'Courier New', Courier, monospace;
     color: black;
-    font-size: 14px;
+    font-size: 30px;
     text-decoration: none
 }
 .closed-info{
@@ -144,11 +144,12 @@ body{
 }
 .close-btn{
     position: fixed;
-    top: 60%;
+    top: 75;
     left: 10%;
     padding:2%;
     font-family: 'Courier New', Courier, sans-serif;
-    cursor: pointer
+    cursor: pointer;
+    font-size: 23px;
 }
 .celtra-close-btn{
     width: 60px;
