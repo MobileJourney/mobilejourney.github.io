@@ -48,12 +48,12 @@ body{
 }
 .modal h1{
     text-align: center;
-    font-size: 1.25em;
+    font-size: 45px;
     font-family: sans-serif;
     color: white;
     font-weight: 100;
     border-bottom: 1.5px solid black;
-    padding-bottom: 5px
+    padding-bottom: 18px
 }
 .modal p{
     text-align: center;
