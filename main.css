@@ -19,7 +19,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    height: 30%;
+    height: 34%;
     background-image: linear-gradient(to bottom, #404040 0%, #262626 100%);
     z-index: 1010;
     display: flex;
@@ -87,7 +87,7 @@ body{
 .modal-with-info{
     position: fixed;
     width: 80%;
-    height: 17%;
+    height: 20%;
     background-color: white;
     opacity: 0.95;
     margin: 0 auto;
