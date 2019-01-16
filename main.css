@@ -144,7 +144,7 @@ body{
 }
 .close-btn{
     position: fixed;
-    top: 75;
+    top: 75%;
     left: 10%;
     padding:2%;
     font-family: 'Courier New', Courier, sans-serif;
