@@ -91,7 +91,7 @@ body{
     background-color: white;
     opacity: 0.95;
     margin: 0 auto;
-    top: 65%;
+    top: 68%;
     left: 10%;
     border: 1px solid #00000021;
     display: flex;
@@ -145,7 +145,7 @@ body{
 }
 .close-btn{
     position: fixed;
-    top: 75%;
+    top: 68%;
     left: 10%;
     padding:2%;
     font-family: 'Courier New', Courier, sans-serif;
