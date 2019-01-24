@@ -42,7 +42,7 @@ function initialize() {
     var p1 = new BMap.Point(-2.349/*766*/, 53.465/*317*/);
     var p2 = new BMap.Point(-1.892/*766*/, 52.477/*317*/);
 
-    var myIcon1 = new BMap.Icon("https://image.flaticon.com/icons/svg/252/252025.svg", new BMap.Size(60, 60));
+    var myIcon1 = new BMap.Icon("https://image.flaticon.com/icons/svg/252/252025.svg", new BMap.Size(20, 20));
 
     var marker1 = new BMap.Marker(p1, { icon: myIcon1 });
     var marker2 = new BMap.Marker(p2, { icon: myIcon1 });
